@@ -1,0 +1,15 @@
+<h1>News#new</h1>
+<p>Find me in app/views/news/new.html.erb</p>
+
+<%= form_for @news do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :body %>
+  <%= f.text_area :body %>
+
+  <%= f.label :image %>
+
+  <%= f.submit %>
+  
+<% end %>

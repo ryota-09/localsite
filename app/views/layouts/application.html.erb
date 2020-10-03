@@ -16,6 +16,8 @@
     <%= link_to root_path, class: "navbar-item" do %>
       <h1 class="title" style="font-family: normal;">Local Infomation</h1>
     <% end %>
+    
+    <%= link_to "ショップ一覧", users_path, class:  "button is-warning is-light" %>
 
     <% if user_signed_in? %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"button is-warning is-light" %>
