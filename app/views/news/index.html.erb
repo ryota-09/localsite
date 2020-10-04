@@ -1,0 +1,8 @@
+<h1>News#index</h1>
+<p>Find me in app/views/news/index.html.erb</p>
+#写真を入れたい
+<%= @news.each do |news| %>
+
+<%= news.user.username %>
+<%= news.updated_at.strftime("%Y-%m-%d %H:%M") %>
+<% end %>

@@ -9,4 +9,8 @@
   <%= @user.email %>
 <% end %>
 
+<% if @user.avatar.attached? %>
+  <%= image_tag @user.avatar %>
+<% end %>
+
 <%= @user.profile %>

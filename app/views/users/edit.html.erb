@@ -1,19 +1,41 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="stylesheet" href="users.scss">
+</head>
+<body>
+  <%= form_for @user do |f| %>
+  <div class="username">
+    <center>
+      <%= f.label :username %>
+      <%= f.text_field :username, :size=>"30" %>
+    </center>
+  </div>
 
-<%= form_for @user do |f| %>
+  <div class="email">
+    <center>
+      <%= f.label :email %>
+      <%= f.text_field :email, :size=>"30" %>
+    </center>
+  </div>
 
-<%= f.label :username %>
-<%= f.text_field :username %>
+  <div class="profile">
+    <center>
+      <%= f.label :profile %>
+      <%= f.text_field :profile, :size=>"30" %>
+    </center>
+  </div>
 
-<%= f.label :email %>
-<%= f.text_field :email %>
 
-<%= f.label :profile %>
-<%= f.text_field :profile %>
+  <%= f.file_field :avatar %>
+  #プロフィールの写真を入れる
 
-#プロフィールの写真を入れる
+  <div class="profile">
+    <center>
+      <%= f.submit %>
+    </center>
+  </div>
 
-<%= f.submit %>
-
-<% end %>
+  <% end %>
+</body>
+</html>

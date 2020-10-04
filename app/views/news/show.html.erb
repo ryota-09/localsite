@@ -1,0 +1,19 @@
+<h1>News#show</h1>
+<p>Find me in app/views/news/show.html.erb</p>
+
+#写真を入れたい
+<%= @news.title %>
+
+<%= @news.user.username %>
+
+<% if @news.user.id == current_user.id %>
+    <%= link_to "編集",edit_news_path(@news), class: "button" %>
+<% end %>
+
+<%= simple_format @news.body %>
+
+<%= @news.user.username %>
+
+<%= link_to user_path(@news.user) do %>
+    <%= @news.user.username %>さんのページへ
+<% end %>
