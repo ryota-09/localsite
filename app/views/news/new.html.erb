@@ -1,15 +1,50 @@
-<h1>News#new</h1>
-<p>Find me in app/views/news/new.html.erb</p>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        新規投稿　作成
+      </h1>
+    </div>
+  </div>
+</section>
 
-<%= form_for @news do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
-
-  <%= f.label :image %>
-
-  <%= f.submit %>
-  
+<% if @news.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@news.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @news.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_for @news do |f| %>
+          <div class="field">
+            <%= f.label :title, "タイトル", class: "label" %>
+            <%= f.text_field :title, class: "input" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :body, "コンテンツ", class: "label" %>
+            <%= f.text_area :body, class: "textarea" %>
+          </div>
+
+          <div class="field">
+            <%= f.label :image, "写真", class: "label" %>
+            
+          </div>
+
+          <%= f.submit '投稿', class: "button is-success" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+

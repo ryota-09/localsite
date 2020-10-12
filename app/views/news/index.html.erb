@@ -1,8 +1,47 @@
-<h1>News#index</h1>
-<p>Find me in app/views/news/index.html.erb</p>
-#写真を入れたい
-<%= @news.each do |news| %>
+<!DOCTYPE html>
+<html lang="ja">
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        投稿一覧
+      </h1>
+    </div>
+  </div>
+</section>
 
-<%= news.user.username %>
-<%= news.updated_at.strftime("%Y-%m-%d %H:%M") %>
-<% end %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @news.each do |news| %>
+        <div class="column is-8">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-3by6">
+                <%= link_to news_path(news) do %>
+                  
+                <% end %>
+              </figure>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="title"><%=link_to news.user.username, user_path(news.user) %></div>
+                </div>
+              </div>
+
+              <div class="content">
+                <time><%= news.updated_at.strftime("%Y-%m-%d %H:%M") %></time>更新
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
