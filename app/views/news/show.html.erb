@@ -27,7 +27,7 @@
             <div class="content">
               <table class="table is-narrow">
                 <tr>
-                  <th>レシピ</th>
+                  <th>ニュース</th>
                 </tr>
                 <tr>
                   <td><%= simple_format @news.body %></td>
@@ -42,7 +42,7 @@
       </div>
 
       <div class="column is-4">
-        <article class="panel is-link">
+        <article class="panel is-warning">
           <p class="panel-heading">
             By <%= @news.user.username %>
           </p>
