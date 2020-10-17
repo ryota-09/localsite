@@ -58,9 +58,7 @@
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
-                <%= link_to news_path(news) do %>
-                  <%= image_tag @news.avatar %>
-                <% end %>
+                #写真が入る
               </figure>
             </div>
             <div class="card-content">
@@ -100,7 +98,7 @@
 </section>
 
 
-<iframe src="https://www.google.com/maps/embed/v1/place?q=<%= @user.profile %>&key=AIzaSyDf1XUycvPXTkcXIKMnroQgSRaSX7x4S1U"></iframe>
+<iframe src="https://www.google.com/maps/embed/v1/place?q=<%= @user.address %>&key=AIzaSyDf1XUycvPXTkcXIKMnroQgSRaSX7x4S1U"></iframe>
 
 
 

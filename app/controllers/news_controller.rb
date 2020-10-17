@@ -29,8 +29,14 @@ class NewsController < ApplicationController
     redirect_to news_path(@news)
   end
 
+  def destroy
+    news = News.find(params[:id])
+    news.destroy
+    redirect_to user_path(news.user), notice: "記事を削除しました。"
+  end
+
   private
   def news_params
-  params.require(:news).permit(:title, :body, :avatar)
+  params.require(:news).permit(:title, :body, :thumbnail)
   end
 end

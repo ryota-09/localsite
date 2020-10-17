@@ -18,7 +18,9 @@
               <div class="card-image">
                 <figure class="image">
                   <%= link_to user_path(user) do %>
-                    #写真が入る
+                    <%= link_to user_path(user) do %>
+                      #写真をいれる
+                    <% end %>
                   <% end %>
                 </figure>
               </div>
