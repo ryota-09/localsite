@@ -19,7 +19,9 @@
                 <figure class="image">
                   <%= link_to user_path(user) do %>
                     <%= link_to user_path(user) do %>
-                      #写真をいれる
+                      <% if user.avatar.attached? %>
+                        <%= image_tag user.avatar %>
+                      <% end %>
                     <% end %>
                   <% end %>
                 </figure>

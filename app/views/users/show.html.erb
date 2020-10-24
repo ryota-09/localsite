@@ -40,6 +40,7 @@
               <tr>
                 <td>
                   <%= @user.profile %>
+                  <iframe src="https://www.google.com/maps/embed/v1/place?q=<%= @user.address %>&key=AIzaSyDf1XUycvPXTkcXIKMnroQgSRaSX7x4S1U"></iframe>
                 </td>
               </tr>
             </table>
@@ -58,12 +59,15 @@
           <div class="card">
             <div class="card-image">
               <figure class="image is-4by3">
-                #写真が入る
+                <% if news.thumbnail.attached? %>
+                  <%= image_tag news.thumbnail %>
+                <% end %>
               </figure>
             </div>
             <div class="card-content">
               <div class="media">
                 <div class="media-content">
+                  <strong><%= news.title %></strong>
                   <%= link_to news_path(news), class: "panel-block" do %>
                     <span class="panel-icon">
                       <i class="fas fa-book" aria-hidden="true"></i>
@@ -98,7 +102,7 @@
 </section>
 
 
-<iframe src="https://www.google.com/maps/embed/v1/place?q=<%= @user.address %>&key=AIzaSyDf1XUycvPXTkcXIKMnroQgSRaSX7x4S1U"></iframe>
+
 
 
 
