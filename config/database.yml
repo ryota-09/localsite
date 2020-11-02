@@ -23,4 +23,6 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  database: localsite_production
+  #database: localsite_production
+  encoding: unicode
+  pool: 5
