@@ -1,12 +1,11 @@
 class CreateNews < ActiveRecord::Migration[5.2]
   def change
     create_table :news do |t|
-      t.integer :user_id
+      t.references :user, null: false, foreign_key: true
       t.string :title
       t.text :body
-      t.string :image_id
-      
-
+      t.string :image_id  
+          
       t.timestamps
     end
   end
