@@ -39,7 +39,7 @@
             <table class="table is-fullwidth">
               <tr>
                 <td>
-                  <%= @user.profile %>
+                  <%= @user&.profile %>
                   <iframe src="https://www.google.com/maps/embed/v1/place?q=<%= @user.address %>&key=AIzaSyDf1XUycvPXTkcXIKMnroQgSRaSX7x4S1U"></iframe>
                 </td>
               </tr>
