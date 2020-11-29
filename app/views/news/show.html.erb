@@ -13,11 +13,13 @@
     <div class="columns is-centered">
       <div class="column is-7">
         <div class="card">
+         <% if @news.thumbnail.attachment.present? %>
           <div class="card-image">
             <figure class="image is-4by3">
               <%= image_tag @news.thumbnail %>
             </figure>
           </div>
+         <% end %>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
